@@ -16,7 +16,8 @@ classification_service = ClassificationService()
 @router.post("/", status_code=status.HTTP_200_OK)
 async def start_classification(classification_model: ClassificationModel):
     try:
-        classification = classification_service.get_classification(classification_model.content)
+        classification = classification_service.get_classification(classification_model.content,
+                                                                   classification_model.category_count)
 
         return GenericResponse.success("Classification Process Success", classification)
     except Exception as ex:
