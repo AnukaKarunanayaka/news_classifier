@@ -11,8 +11,8 @@ class NewsClassifier:
     def __init__(self):
         self.model = {}
 
-    def transform_preprocessing(self, prediction):
-        preprocessed_data = self.model['transformer'].transform(prediction)
+    def transform_preprocessing(self, data):
+        preprocessed_data = self.model['transformer'].transform(data)
         return preprocessed_data
 
     def classify_article(self, data, category_count):
